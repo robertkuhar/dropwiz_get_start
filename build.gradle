@@ -4,7 +4,7 @@ apply plugin: 'idea'
 
 description = 'Dropwizard Getting Started project in gradle'
 version = "1.0.0"
-mainClassName = 'com.example.helloworld.HelloWorldService'
+ext.mainClassName = 'com.example.helloworld.HelloWorldService'
 
 defaultTasks 'clean', 'build'
 
