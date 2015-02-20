@@ -1,9 +1,10 @@
-apply plugin: 'groovy'
+apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 description = 'Dropwizard Getting Started project in gradle'
-version = "1.0.0"
+version = '1.1'
+
 ext.mainClassName = 'com.example.helloworld.HelloWorldService'
 
 defaultTasks 'clean', 'build'
@@ -13,8 +14,6 @@ repositories {
 }
 
 dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.3'
-
     compile 'com.yammer.dropwizard:dropwizard-core:0.6.2'
 }
 

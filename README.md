@@ -9,7 +9,7 @@ blog posting at http://www.jworks.nl/2013/07/16/gradle-creating-executable-jars-
 
 Following the gradle build, the product can be executed from the command line like
 
-java -jar build/libs/dropwiz_get_start-1.0.0.jar server src/main/resources/hello-world.yml
+java -jar build/libs/dropwiz_get_start-1.1.jar server src/main/resources/hello-world.yml
 
 With the server running requests are like http://localhost:8080/hello-world?name=Bob
 
