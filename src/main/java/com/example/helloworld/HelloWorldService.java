@@ -1,23 +1,22 @@
 package com.example.helloworld;
 
-import com.yammer.dropwizard.*;
-import com.yammer.dropwizard.config.*;
+import io.dropwizard.Application;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
 
-public class HelloWorldService extends Service<HelloWorldConfiguration> {
-    public static void main( String[] args ) throws Exception {
-        new HelloWorldService().run( args );
-    }
+public class HelloWorldService extends Application<HelloWorldConfiguration> {
+  public static void main(String[] args) throws Exception {
+    new HelloWorldService().run(args);
+  }
 
-    @Override
-    public void initialize( Bootstrap<HelloWorldConfiguration> bootstrap ) {
-        bootstrap.setName( "hello-world" );
-    }
+  @Override
+  public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+  }
 
-    @Override
-    public void run( HelloWorldConfiguration configuration, Environment environment ) {
-        final String template = configuration.getTemplate();
-        final String defaultName = configuration.getDefaultName();
-        environment.addResource( new HelloWorldResource( template, defaultName ) );
-        environment.addHealthCheck( new TemplateHealthCheck( template ) );
-    }
+  @Override
+  public void run(HelloWorldConfiguration configuration, Environment environment) {
+    final HelloWorldResource resource =
+        new HelloWorldResource(configuration.getTemplate(), configuration.getDefaultName());
+    environment.jersey().register(resource);
+  }
 }
