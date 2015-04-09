@@ -7,7 +7,7 @@ version = '1.1'
 
 ext.mainClassName = 'com.example.helloworld.HelloWorldService'
 
-ext.dropwizard = [version: '0.7.1']
+ext.dropwizard = [version: '0.8.1']
 
 defaultTasks 'clean', 'build'
 
